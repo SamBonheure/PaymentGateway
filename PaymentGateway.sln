@@ -9,17 +9,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{10A41FD0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.Api", "src\PaymentGateway.Api\PaymentGateway.Api.csproj", "{C0EAC935-5C37-4CCF-814A-9C2A078E99D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway.Domain", "src\PaymentGateway.Domain\PaymentGateway.Domain.csproj", "{24C6B7E9-35F5-4109-BAB4-43BDE063E6CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.Domain", "src\PaymentGateway.Domain\PaymentGateway.Domain.csproj", "{24C6B7E9-35F5-4109-BAB4-43BDE063E6CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway.Infrastructure", "src\PaymentGateway.Infrastructure\PaymentGateway.Infrastructure.csproj", "{6A1140C3-72BB-44FA-86D8-83C1D4BED624}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.Infrastructure", "src\PaymentGateway.Infrastructure\PaymentGateway.Infrastructure.csproj", "{6A1140C3-72BB-44FA-86D8-83C1D4BED624}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mock", "Mock", "{3EEAE812-3101-4E32-A752-31C0B13E4850}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockBank", "src\MockBank\MockBank.csproj", "{4873DDE6-425E-4571-890B-E17BA78080A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockBank", "src\MockBank\MockBank.csproj", "{4873DDE6-425E-4571-890B-E17BA78080A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway.Api.UnitTests", "tests\PaymentGateway.Api.UnitTests\PaymentGateway.Api.UnitTests.csproj", "{FBFC1A16-B9EF-44D4-8FD5-B85A8F992F9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.Api.UnitTests", "tests\PaymentGateway.Api.UnitTests\PaymentGateway.Api.UnitTests.csproj", "{FBFC1A16-B9EF-44D4-8FD5-B85A8F992F9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway.Api.IntegrationTests", "tests\PaymentGateway.Api.IntegrationTests\PaymentGateway.Api.IntegrationTests.csproj", "{8C5DEBC0-D80E-4486-9449-7EEBC9BBCD84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.Api.IntegrationTests", "tests\PaymentGateway.Api.IntegrationTests\PaymentGateway.Api.IntegrationTests.csproj", "{8C5DEBC0-D80E-4486-9449-7EEBC9BBCD84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5E93D10E-8284-41DB-BAB4-E738603AB63A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Checkout.com Challenge.pdf = Checkout.com Challenge.pdf
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+		Gateway API.postman_collection.json = Gateway API.postman_collection.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.Domain.UnitTests", "tests\PaymentGateway.Domain.UnitTests\PaymentGateway.Domain.UnitTests.csproj", "{BAB012AD-E48E-433B-BD3C-8CD235070FAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +63,10 @@ Global
 		{8C5DEBC0-D80E-4486-9449-7EEBC9BBCD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C5DEBC0-D80E-4486-9449-7EEBC9BBCD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C5DEBC0-D80E-4486-9449-7EEBC9BBCD84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAB012AD-E48E-433B-BD3C-8CD235070FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAB012AD-E48E-433B-BD3C-8CD235070FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAB012AD-E48E-433B-BD3C-8CD235070FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAB012AD-E48E-433B-BD3C-8CD235070FAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +79,7 @@ Global
 		{4873DDE6-425E-4571-890B-E17BA78080A2} = {3EEAE812-3101-4E32-A752-31C0B13E4850}
 		{FBFC1A16-B9EF-44D4-8FD5-B85A8F992F9B} = {10A41FD0-1F3D-4F2F-A667-EAD7A26A5E2C}
 		{8C5DEBC0-D80E-4486-9449-7EEBC9BBCD84} = {10A41FD0-1F3D-4F2F-A667-EAD7A26A5E2C}
+		{BAB012AD-E48E-433B-BD3C-8CD235070FAA} = {10A41FD0-1F3D-4F2F-A667-EAD7A26A5E2C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {894A1541-09D5-4826-A0C2-0DEEFC31E125}

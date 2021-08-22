@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "eb4e9a82-54c7-4b37-a22d-b25f22932f4f",
+		"name": "Gateway API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Payment Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44395/Payments/1f325b1f-b57c-4b8b-82c0-003dd8107dda",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44395",
+					"path": [
+						"Payments",
+						"1f325b1f-b57c-4b8b-82c0-003dd8107dda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make Payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"1f325b1f-b57c-4b8b-82c0-003dd8107dda\",\r\n  \"amount\": 50.26,\r\n  \"currency\": \"USD\",\r\n  \"description\": \"Payment to amazon\",\r\n  \"card\":{\r\n       \"number\": \"1424 4587 9898 2230\",\r\n       \"cvv\": \"665\",\r\n       \"expiryMonth\": 5,\r\n       \"expiryYear\": 22,\r\n       \"ownerName\": \"Tom Cruise\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44395/Payments",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44395",
+					"path": [
+						"Payments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "123",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
