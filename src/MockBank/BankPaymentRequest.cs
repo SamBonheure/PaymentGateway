@@ -1,7 +1,10 @@
-﻿namespace MockBank
+﻿using System;
+
+namespace MockBank
 {
     public class BankPaymentRequest
     {
+        public Guid PaymentId { get; set; }
         public string CardNumber { get; set; }
         public string CVV { get; set; }
         public int ExpiryYear { get; set; }

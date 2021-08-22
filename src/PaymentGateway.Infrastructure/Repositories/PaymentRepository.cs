@@ -29,5 +29,13 @@ namespace PaymentGateway.Infrastructure.Repositories
 
             _cache.Set(payment.Id, payment);
         }
+
+        public async Task UpdateAsync(Payment payment)
+        {
+            if (!_cache.TryGetValue<Payment>(payment.Id, out var existingPayment))
+                throw new ArgumentException($"No payment found with id {payment.Id}");
+
+            _cache.Set(payment.Id, payment);
+        }
     }
 }

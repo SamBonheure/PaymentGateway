@@ -11,6 +11,7 @@ namespace PaymentGateway.Domain.Entities
         public Money Amount { get; private set; }
         public string Description { get; private set; }
         public PaymentStatus Status { get; private set; }
+        public PaymentDeclinedReasonCode? Reason { get; private set; }
         public bool? IsRisk { get; private set; }
         public DateTime RequestedOn { get; private set; }
 
@@ -28,13 +29,12 @@ namespace PaymentGateway.Domain.Entities
         public void Approve()
         {
             Status = PaymentStatus.Approved;
-            // Launch new successEvent
         }
 
         public void Decline(PaymentDeclinedReasonCode reason)
         {
             Status = PaymentStatus.Declined;
-            // Launch new declinedEvent
+            Reason = reason;
         }
 
         public static Payment Create(Guid id, Guid merchantId, Card card, Money amount, string description)

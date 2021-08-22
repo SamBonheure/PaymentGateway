@@ -18,5 +18,11 @@ namespace PaymentGateway.Domain.Interfaces
         /// </summary>
         /// <param name="payment">The <see cref="Payment"/></param>
         public Task CreateAsync(Payment payment);
+
+        /// <summary>
+        /// Update a payment
+        /// </summary>
+        /// <param name="payment">The <see cref="Payment"/></param>
+        public Task UpdateAsync(Payment payment);
     }
 }

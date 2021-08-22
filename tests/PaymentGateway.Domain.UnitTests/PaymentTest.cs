@@ -48,7 +48,7 @@ namespace PaymentGateway.Domain.UnitTests
             var paymentId = Guid.Parse("1f325b1f-b57c-4b8b-82c0-003dd8107dda");
 
             // Act
-            Action action = () => Payment.Create(paymentId,merchantId, card, money, "Amazon Payment");
+            Action action = () => Payment.Create(paymentId, merchantId, card, money, "Amazon Payment");
 
             // Assert
             action.Should().Throw<ArgumentException>().WithMessage("*merchantId*");
@@ -110,14 +110,16 @@ namespace PaymentGateway.Domain.UnitTests
             var merchantId = Guid.Parse("6e075f51-6b78-430b-8e77-8fe3d72d9af0");
             var paymentId = Guid.Parse("1f325b1f-b57c-4b8b-82c0-003dd8107dda");
             var description = "Amazon Payment";
+            var reason = PaymentDeclinedReasonCode.InsufficientFunds;
 
             var payment = Payment.Create(paymentId, merchantId, card, money, description);
 
             // Act
-            payment.Decline(PaymentDeclinedReasonCode.InsufficientFunds);
+            payment.Decline(reason);
 
             // Assert
             payment.Status.Should().Be(PaymentStatus.Declined);
+            payment.Reason.Should().Be(reason);
         }
     }
 }

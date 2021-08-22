@@ -9,33 +9,33 @@ namespace PaymentGateway.Api
 {
     public class Program
     {
-		public static IConfiguration Configuration { get; } = new ConfigurationBuilder()
-			.SetBasePath(Directory.GetCurrentDirectory())
-			.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-			.AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", optional: true)
-			.AddEnvironmentVariables()
-			.Build();
+        public static IConfiguration Configuration { get; } = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}.json", optional: true)
+            .AddEnvironmentVariables()
+            .Build();
 
-		public static void Main(string[] args)
+        public static void Main(string[] args)
         {
-			ConfigureLogger();
-			Log.Information("Application Started");
+            ConfigureLogger();
+            Log.Information("Application Started");
 
-			try
-			{
-				CreateHostBuilder(args).Build().Run();
-				return;
-			}
-			catch (Exception ex)
-			{
-				Log.Fatal(ex, "Host terminated unexpectedly");
-				return;
-			}
-			finally
-			{
-				Log.CloseAndFlush();
-			}
-		}
+            try
+            {
+                CreateHostBuilder(args).Build().Run();
+                return;
+            }
+            catch (Exception ex)
+            {
+                Log.Fatal(ex, "Host terminated unexpectedly");
+                return;
+            }
+            finally
+            {
+                Log.CloseAndFlush();
+            }
+        }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
@@ -44,11 +44,11 @@ namespace PaymentGateway.Api
                     webBuilder.UseStartup<Startup>().UseSerilog();
                 });
 
-		public static void ConfigureLogger()
+        public static void ConfigureLogger()
         {
-			Log.Logger = new LoggerConfiguration()
-				.ReadFrom.Configuration(Configuration)
-				.CreateLogger();
-		}
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(Configuration)
+                .CreateLogger();
+        }
     }
 }

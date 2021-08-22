@@ -34,5 +34,10 @@
         /// Insufficient funds in bank account to perform transaction
         /// </summary>
         InsufficientFunds,
+
+        /// <summary>
+        /// A payment that is potentially frauduletn
+        /// </summary>
+        PotentialFraudulentPayment
     }
 }

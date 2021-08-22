@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using PaymentGateway.Api.Commands;
 using PaymentGateway.Api.Responses;
 using PaymentGateway.Domain.Entities;
+using PaymentGateway.Domain.Events;
 using PaymentGateway.Domain.Interfaces;
 using System;
 using System.Threading;
@@ -14,13 +15,15 @@ namespace PaymentGateway.Api.Handlers.Command
     public class CreatePaymentHandler : IRequestHandler<CreatePaymentCommand, CreatePaymentResponse>
     {
         private readonly IPaymentRepository _paymentRepository;
+        private readonly IEventDispatcher _dispatcher;
         private readonly IMapper _mapper;
         private readonly ILogger<CreatePaymentHandler> _logger;
 
-        public CreatePaymentHandler(ILogger<CreatePaymentHandler> logger, IPaymentRepository paymentRepository, IMapper mapper)
+        public CreatePaymentHandler(ILogger<CreatePaymentHandler> logger, IPaymentRepository paymentRepository, IEventDispatcher dispatcher, IMapper mapper)
         {
             _logger = logger;
             _paymentRepository = paymentRepository;
+            _dispatcher = dispatcher;
             _mapper = mapper;
         }
 
@@ -38,8 +41,9 @@ namespace PaymentGateway.Api.Handlers.Command
                 Payment payment = Payment.Create(request.Id, request.MerchantId, card, amount, request.Description);
 
                 await _paymentRepository.CreateAsync(payment);
-
                 paymentResponse = _mapper.Map<CreatePaymentResponse>(payment);
+
+                await _dispatcher.PublishAsync(new PaymentCreatedEvent(payment));
 
                 _logger.LogInformation($"Payment started processing to {request.MerchantId} by {request.Card.Number} for {request.Amount} {request.Currency}");
             }

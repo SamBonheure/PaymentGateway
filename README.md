@@ -197,13 +197,14 @@ The Domain project includes things such as:
 
 ## MockBank
 
-This project is responsible for simulating the acquiring bank's behaviour. I have included randomized delay and response behaviour.
+This project is responsible for simulating the acquiring bank's behaviour. 
+
+I have included the following mock behavior:
+- Randomized status codes returned
+- Randomized declined reason codes returned
+- Automatically decline payments above 1000
 
 In order to switch this out for a real bank the specific Adaptar should implement the IBankAdapter interface.
-
-### Resilience
-
-Since we assume that the bank can be slow or even timeout, I've implement **Poly** for Retry and Circuit breaking. 
 
 ## Tests
 
@@ -278,5 +279,8 @@ This is currently very basic, but will become more usefull once a datastore has 
 
 # Improvements
 - Connect to a datastore instead of using a in memory store (NoSQL seems approriate)
-- We should have a pre-defined list of merchants and its details
+- Add better resilience through retry/circuit break functionality to external bank (Eg: Poly)
+- We should have store pre-defined list of merchants and its details
 - More elegant tests, add Performance/Acceptance tests
+- Add API metrics with something like prometheus
+- Connect Serilog to cloud for centralized logging, or implement something like appinsights/sentry.io
