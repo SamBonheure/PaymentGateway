@@ -15,7 +15,7 @@ Payment gateway API that allows a merchant to offer a way for their shoppers to 
 
 # High level flow
 
- ![FlowChart](https://github.com/SamBonheure/PaymentGateway/master/images/Gateway_Flow.png)
+ ![FlowChart](https://github.com/SamBonheure/PaymentGateway/blob/master/images/Gateway_Flow.png)
 
 # Architecture
 
@@ -56,7 +56,7 @@ I have also included a Postman file in the solution called `Gateway API.postman_
 
 The outlined project structure below is inspired by https://github.com/jasontaylordev/CleanArchitecture
 
-![Architecture](https://github.com/SamBonheure/PaymentGateway/master/images/CleanArchitecture.png)
+![Architecture](https://github.com/SamBonheure/PaymentGateway/blob/master/images/CleanArchitecture.png)
 
 ## PaymentGateway.Api 
 
@@ -224,30 +224,38 @@ It will test the following behaviours:
 This project covers the unit tests for the handlers of our API gateway.
 
 It will test the following behaviours:
-- 
+- Handlers
 
 ### PaymentGateway.Api.IntegrationTests
 
 This project covers the integration tests for the API.
 
 It will test the following behaviours:
-- 
+- Endpoints
 
 # Bonus points
 ## Authentication
-I've added API-Key authentication to the API and injected it into the Swagger UI.
+I've added `API-Key based authentication` to the API and injected it into the Swagger UI.
 This will also inject the matching MerchantId so that it does not have to be passed into the payment requests.
 
 You can find the keys in the Appsettings.Development.Json or as follows:
->Merchant A: "123"
->Merchant B: "456"
++ Merchant A: `123`
++ Merchant B: `456`
 
 To use this in Swagger, simply click the "Authorize" button and insert your key of choice.
 
-In practice these keys will be returned by a authentication server and not stored in a config file
+In practice these keys will be returned by a authentication server and not stored in a config file!
+
+## API Client Rate Limiting
+I have implemented client based rate limiting into the app using the `AspNetCoreRateLimiting` package and used the Api Keys as clients.
+
++ Api Key `123`: Set to max 2 requests in 10s window
++ Api Key `456`: Whitelisted and not throttled
+
+These settings can be tweaked in the `appsettings.json` file
 
 ## Logging
-I have added *SeriLog* for structured file logging.
+I have added `SeriLog` for structured file logging.
 The settings can be changed through the appsettings file.
 
 By default the log files can be found in the /Logs folder
@@ -260,17 +268,13 @@ I have set up GitHub actions to perform continious integration on our code base 
 
 ## Containerization (Docker)
 
-Docker
+The project contains containerization support using Docker. 
 
-## API Client Rate Limiting
-I have implemented client based rate limiting into the app using the AspNetCoreRateLimiting package and used the Api Keys as clients.
+Run `docker-compose build` and `docker-compose up` to start the gateway.
 
-Api Key "123": Set to max 2 requests in 10s window
-Api Key "456": Whitelisted and not throttled
-
-These settings can be tweaked in the appsettings file
+This is currently very basic, but will become more usefull once a datastore has been added to the mix.
 
 # Improvements
-- Connect to a datastore instead of using a in memory store
+- Connect to a datastore instead of using a in memory store (NoSQL seems approriate)
 - We should have a pre-defined list of merchants and its details
 - More elegant tests, add Performance/Acceptance tests
