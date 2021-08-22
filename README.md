@@ -234,7 +234,14 @@ It will test the following behaviours:
 This project covers the integration tests for the API.
 
 It will test the following behaviours:
-- Endpoints
+
+### PaymentGateway.Api.Sdk
+
+This is the SDK project that can be used to easily implement the gateway API by a Merchant. It is built using `Refit`
+
+### PaymentGateway.Api.Sdk.Sample
+
+This is a sample project that shows how to use the SDK using `Refit`
 
 # Bonus points
 ## Authentication
@@ -252,10 +259,15 @@ In practice these keys will be returned by a authentication server and not store
 ## API Client Rate Limiting
 I have implemented client based rate limiting into the app using the `AspNetCoreRateLimiting` package and used the Api Keys as clients.
 
-+ Api Key `123`: Set to max 2 requests in 10s window
-+ Api Key `456`: Whitelisted and not throttled
++ ApiKey `123`: Set to max 2 requests in 10s window
++ ApiKey `456`: Whitelisted and not throttled
 
 These settings can be tweaked in the `appsettings.json` file
+
+## API Client SDK
+I Created a API Client using `Refit`. A sample project can be found under `PaymentGateway.Api.Sdk.Sample`
+
+If you wish to test this, simply run the console app and API together.
 
 ## Logging
 I have added `SeriLog` for structured file logging.

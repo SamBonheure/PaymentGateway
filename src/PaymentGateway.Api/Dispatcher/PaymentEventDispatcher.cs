@@ -3,6 +3,7 @@ using MockBank;
 using PaymentGateway.Domain.Entities;
 using PaymentGateway.Domain.Events;
 using PaymentGateway.Domain.Interfaces;
+using System;
 using System.Threading.Tasks;
 
 namespace PaymentGateway.Api.Dispatcher
@@ -25,6 +26,10 @@ namespace PaymentGateway.Api.Dispatcher
             if (Event.GetType() == typeof(PaymentCreatedEvent))
             {
                 var task = Task.Run(() => ProcessPayment((Event as PaymentCreatedEvent).Payment));//fire and forget
+            }
+            else
+            {
+                throw new NotSupportedException("Event type not supported");
             }
 
             return Task.CompletedTask;

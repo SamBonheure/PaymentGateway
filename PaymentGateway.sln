@@ -33,6 +33,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGateway.Domain.UnitTests", "tests\PaymentGateway.Domain.UnitTests\PaymentGateway.Domain.UnitTests.csproj", "{BAB012AD-E48E-433B-BD3C-8CD235070FAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway.Api.Sdk", "src\PaymentGateway.Api.Sdk\PaymentGateway.Api.Sdk.csproj", "{BA3E9242-9C9F-40C5-9331-21119556851E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway.Api.Sdk.Sample", "src\PaymentGateway.Api.Sdk.Sample\PaymentGateway.Api.Sdk.Sample.csproj", "{7F0FA202-E84D-456D-BF31-1F04799AECC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +71,14 @@ Global
 		{BAB012AD-E48E-433B-BD3C-8CD235070FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAB012AD-E48E-433B-BD3C-8CD235070FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAB012AD-E48E-433B-BD3C-8CD235070FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA3E9242-9C9F-40C5-9331-21119556851E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA3E9242-9C9F-40C5-9331-21119556851E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA3E9242-9C9F-40C5-9331-21119556851E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA3E9242-9C9F-40C5-9331-21119556851E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0FA202-E84D-456D-BF31-1F04799AECC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0FA202-E84D-456D-BF31-1F04799AECC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0FA202-E84D-456D-BF31-1F04799AECC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0FA202-E84D-456D-BF31-1F04799AECC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +92,8 @@ Global
 		{FBFC1A16-B9EF-44D4-8FD5-B85A8F992F9B} = {10A41FD0-1F3D-4F2F-A667-EAD7A26A5E2C}
 		{8C5DEBC0-D80E-4486-9449-7EEBC9BBCD84} = {10A41FD0-1F3D-4F2F-A667-EAD7A26A5E2C}
 		{BAB012AD-E48E-433B-BD3C-8CD235070FAA} = {10A41FD0-1F3D-4F2F-A667-EAD7A26A5E2C}
+		{BA3E9242-9C9F-40C5-9331-21119556851E} = {985E615C-E90E-489E-A378-18C9D4D627C1}
+		{7F0FA202-E84D-456D-BF31-1F04799AECC0} = {985E615C-E90E-489E-A378-18C9D4D627C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {894A1541-09D5-4826-A0C2-0DEEFC31E125}
