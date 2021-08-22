@@ -1,6 +1,8 @@
 # Payment Gateway API
 Payment gateway API that allows a merchant to offer a way for their shoppers to pay for their product.
 
+![api workflow](https://github.com/SamBonheure/PaymentGateway/actions/workflows/netcore.yml/badge.svg)
+
 # Deliverables
 + Build an API that allows a merchant to:
   + `Process a payment through your payment gateway.`
@@ -260,11 +262,11 @@ The settings can be changed through the appsettings file.
 
 By default the log files can be found in the /Logs folder
 
-## Build scripts
-
 ## GitHub Actions (CI)
 
-I have set up GitHub actions to perform continious integration on our code base and run tests
+I have set up `GitHub actions` to perform continious integration on our code base and run tests.
+
+The workflow file can be found in the `.github` folder
 
 ## Containerization (Docker)
 
