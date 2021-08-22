@@ -227,13 +227,21 @@ It will test the following behaviours:
 This project covers the unit tests for the handlers of our API gateway.
 
 It will test the following behaviours:
-- Handlers
+- EventDispatcher processing
 
 ### PaymentGateway.Api.IntegrationTests
 
 This project covers the integration tests for the API.
 
 It will test the following behaviours:
++ Created: POST /Payments
++ BadRequest: Invalid CardNumber
++ BadRequest: Invalid CVV
++ BadRequest: Invalid Expiry date
++ BadRequest: Expired Card
++ BadRequest: Duplicate payments
++ Ok: GET /Payments/{id}
++ NotFound: GET /Payments/{id}
 
 ### PaymentGateway.Api.Sdk
 
